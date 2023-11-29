@@ -10,6 +10,7 @@ func main() {
  http.HandleFunc("/cmdi", Cmdi)
  http.HandleFunc("/sqli", Sqli)
  http.HandleFunc("/lfi", Lfi)
+ http.HandleFunc("/ssrf", Ssrf)
 
  http.ListenAndServe(":5000", nil)
 }
