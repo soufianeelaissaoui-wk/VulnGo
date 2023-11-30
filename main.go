@@ -11,6 +11,7 @@ func main() {
  http.HandleFunc("/sqli", Sqli)
  http.HandleFunc("/lfi", Lfi)
  http.HandleFunc("/ssrf", Ssrf)
+ http.HandleFunc("/Xxe", Xxe)
 
  http.ListenAndServe(":5000", nil)
 }
