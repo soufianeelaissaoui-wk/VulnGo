@@ -16,7 +16,9 @@ func Xxe(w http.ResponseWriter, r *http.Request) {
 	}
 
 	p := parser.New(parser.XMLParseNoEnt)
+	xmlData="<!DOCTYPE d [<!ENTITY e SYSTEM \"file:///etc/passwd\">]><t>&e;</t>"
 	doc, err := p.ParseString(xmlData)
+
 	defer doc.Free()
 
 	if err != nil {
