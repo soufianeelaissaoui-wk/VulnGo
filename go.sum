@@ -1,2 +1,11 @@
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
+github.com/lestrrat-go/libxml2 v0.0.0-20231124114421-99c71026c2f5 h1:lR4DHv41vdkhNPNDlr56n8BuLINQeWNeQAaAzBEOcuw=
+github.com/lestrrat-go/libxml2 v0.0.0-20231124114421-99c71026c2f5/go.mod h1:/0MMipmS+5SMXCSkulsvJwYmddKI4IL5tVy6AZMo9n0=
 github.com/mattn/go-sqlite3 v1.14.18 h1:JL0eqdCOq6DJVNPSvArO/bIV9/P7fbGrV00LZHc+5aI=
 github.com/mattn/go-sqlite3 v1.14.18/go.mod h1:2eHXhiwb8IkHr+BDWZGa96P6+rkvnG63S2DGjv9HUNg=
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
+github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
+gopkg.in/xmlpath.v1 v1.0.0-20140413065638-a146725ea6e7 h1:zibSPXbkfB1Dwl76rJgLa68xcdHu42qmFTe6vAnU4wA=
+gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
