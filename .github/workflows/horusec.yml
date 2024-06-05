@@ -24,7 +24,7 @@ permissions:
 
 jobs:
   checking_code:
-    runs-on: [ubuntu-latest]
+    runs-on: [self-hosted, small, al2023]
     name: Horusec Scan
     steps:
       - uses: actions/checkout@v3
