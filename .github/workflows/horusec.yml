@@ -23,16 +23,8 @@ permissions:
   id-token: write
 
 jobs:
-  # Zips and uploads the dart package to the pub server
-  package:
-    name: 📦 package
-    runs-on: [ubuntu-latest]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: Workiva/gha-setup-credentials@v2.0.5
-
   checking_code:
-    runs-on: [self-hosted, small, al2023]
+    runs-on: [ubuntu-latest]
     name: Horusec Scan
     steps:
       - uses: actions/checkout@v3
