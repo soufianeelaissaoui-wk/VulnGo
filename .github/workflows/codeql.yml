@@ -1,39 +1,34 @@
-name: Code Scan
+# Name of this GitHub Actions workflow.
+name: Semgrep
 
 on:
-  pull_request:
+  # Scan changed files in PRs (diff-aware scanning):
+  pull_request: {}
+  # Scan on-demand through GitHub Actions interface:
+  workflow_dispatch: {}
+  # Scan mainline branches and report all findings:
   push:
-    branches:
-      - master
-    tags:
-      - '**'
+    branches: ["master", "main"]
+  # Schedule the CI job (this method uses cron syntax):
 
-permissions:
-  actions: read
-  contents: read
-  id-token: write
 
 jobs:
   semgrep:
     # User definable name of this GitHub Actions job.
-    name: semgrep-oss/scan
-    # If you are self-hosting, change the following `runs-on` value:
-    runs-on: [self-hosted, small, al2023]
+    name: semgrep/ci 
+    # If you are self-hosting, change the following `runs-on` value: 
+    runs-on: ubuntu-latest
 
     container:
       # A Docker image with Semgrep installed. Do not change this.
-      image: semgrep/semgrep
+      image: returntocorp/semgrep
 
     # Skip any PR created by dependabot to avoid permission issues:
     if: (github.actor != 'dependabot[bot]')
 
     steps:
-      # Fetch project source with GitHub Actions Checkout. Use either v3 or v4.
-      - uses: actions/checkout@v4
-      # Run the "semgrep scan" command on the command line of the docker image.
+      # Fetch project source with GitHub Actions Checkout.
+      - uses: actions/checkout@v3
+      # Run the "semgrep ci" command on the command line of the docker image.
       - run: semgrep ci --config auto --sarif --sarif-output semgrep.sarif
-      # Uploads results.sarif to GitHub repository using the upload-sarif action
-      - uses: github/codeql-action/upload-sarif@v3
-        with:
-          # Path to SARIF file relative to the root of the repository
-          sarif_file: semgrep.sarif
+     
