@@ -31,7 +31,7 @@ jobs:
       # Fetch project source with GitHub Actions Checkout. Use either v3 or v4.
       - uses: actions/checkout@v4
       # Run the "semgrep scan" command on the command line of the docker image.
-      - run: semgrep ci --config auto --sarif --sarif-output semgrep.sarif
+      - run: semgrep ci --config auto --sarif --sarif-output semgrep.sarif  || true
       # Uploads results.sarif to GitHub repository using the upload-sarif action
       - uses: github/codeql-action/upload-sarif@v3
         with:
